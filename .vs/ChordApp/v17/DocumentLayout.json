@@ -3,6 +3,13 @@
   "WorkspaceRootPath": "C:\\Users\\Dylan Nguyen\\Documents\\Visual Studio 2022\\Projects\\ChordApp\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{08D6BCCA-828F-4D95-A5C5-68AF19A6E29B}|ChordApp\\ChordApp.csproj|c:\\users\\dylan nguyen\\documents\\visual studio 2022\\projects\\chordapp\\chordapp\\components\\objects\\chord.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{08D6BCCA-828F-4D95-A5C5-68AF19A6E29B}|ChordApp\\ChordApp.csproj|solutionrelative:chordapp\\components\\objects\\chord.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Dylan Nguyen\\AppData\\Local\\Temp\\.vsdbgsrc\\c5b2729678e1a03df19e65899b4ad191802bd617a3623b940d97308bcc2b98d9\\ClientProxyExtensions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{08D6BCCA-828F-4D95-A5C5-68AF19A6E29B}|ChordApp\\ChordApp.csproj|c:\\users\\dylan nguyen\\documents\\visual studio 2022\\projects\\chordapp\\chordapp\\components\\objects\\note.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{08D6BCCA-828F-4D95-A5C5-68AF19A6E29B}|ChordApp\\ChordApp.csproj|solutionrelative:chordapp\\components\\objects\\note.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -11,8 +18,16 @@
       "RelativeMoniker": "D:0:0:{08D6BCCA-828F-4D95-A5C5-68AF19A6E29B}|ChordApp\\ChordApp.csproj|solutionrelative:chordapp\\components\\pages\\counter.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{08D6BCCA-828F-4D95-A5C5-68AF19A6E29B}|ChordApp\\ChordApp.csproj|c:\\users\\dylan nguyen\\documents\\visual studio 2022\\projects\\chordapp\\chordapp\\components\\layout\\navmenu.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{08D6BCCA-828F-4D95-A5C5-68AF19A6E29B}|ChordApp\\ChordApp.csproj|solutionrelative:chordapp\\components\\layout\\navmenu.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{08D6BCCA-828F-4D95-A5C5-68AF19A6E29B}|ChordApp\\ChordApp.csproj|c:\\users\\dylan nguyen\\documents\\visual studio 2022\\projects\\chordapp\\chordapp\\components\\pages\\chordconstructor.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{08D6BCCA-828F-4D95-A5C5-68AF19A6E29B}|ChordApp\\ChordApp.csproj|solutionrelative:chordapp\\components\\pages\\chordconstructor.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{08D6BCCA-828F-4D95-A5C5-68AF19A6E29B}|ChordApp\\ChordApp.csproj|c:\\users\\dylan nguyen\\documents\\visual studio 2022\\projects\\chordapp\\chordapp\\components\\pages\\home.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{08D6BCCA-828F-4D95-A5C5-68AF19A6E29B}|ChordApp\\ChordApp.csproj|solutionrelative:chordapp\\components\\pages\\home.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{08D6BCCA-828F-4D95-A5C5-68AF19A6E29B}|ChordApp\\ChordApp.csproj|c:\\users\\dylan nguyen\\documents\\visual studio 2022\\projects\\chordapp\\chordapp\\components\\pages\\weather.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{08D6BCCA-828F-4D95-A5C5-68AF19A6E29B}|ChordApp\\ChordApp.csproj|solutionrelative:chordapp\\components\\pages\\weather.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     }
   ],
   "DocumentGroupContainers": [
@@ -22,44 +37,96 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 2,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
+              "Title": "ClientProxyExtensions.cs",
+              "DocumentMoniker": "C:\\Users\\Dylan Nguyen\\AppData\\Local\\Temp\\.vsdbgsrc\\c5b2729678e1a03df19e65899b4ad191802bd617a3623b940d97308bcc2b98d9\\ClientProxyExtensions.cs",
+              "RelativeDocumentMoniker": "..\\..\\..\\..\\AppData\\Local\\Temp\\.vsdbgsrc\\c5b2729678e1a03df19e65899b4ad191802bd617a3623b940d97308bcc2b98d9\\ClientProxyExtensions.cs",
+              "ToolTip": "C:\\Users\\Dylan Nguyen\\AppData\\Local\\Temp\\.vsdbgsrc\\c5b2729678e1a03df19e65899b4ad191802bd617a3623b940d97308bcc2b98d9\\ClientProxyExtensions.cs [Read Only]",
+              "RelativeToolTip": "..\\..\\..\\..\\AppData\\Local\\Temp\\.vsdbgsrc\\c5b2729678e1a03df19e65899b4ad191802bd617a3623b940d97308bcc2b98d9\\ClientProxyExtensions.cs [Read Only]",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAiwBkAAAACAAAAAQAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-29T21:32:31.752Z",
+              "EditorCaption": " [Read Only]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
               "Title": "Note.cs",
               "DocumentMoniker": "C:\\Users\\Dylan Nguyen\\Documents\\Visual Studio 2022\\Projects\\ChordApp\\ChordApp\\Components\\Objects\\Note.cs",
               "RelativeDocumentMoniker": "ChordApp\\Components\\Objects\\Note.cs",
               "ToolTip": "C:\\Users\\Dylan Nguyen\\Documents\\Visual Studio 2022\\Projects\\ChordApp\\ChordApp\\Components\\Objects\\Note.cs",
               "RelativeToolTip": "ChordApp\\Components\\Objects\\Note.cs",
-              "ViewState": "AgIAAGEAAAAAAAAAAAAiwHUAAABMAAAAAAAAAA==",
+              "ViewState": "AgIAAE4AAAAAAAAAAAAAAAkAAAAfAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-29T02:59:28.264Z",
+              "WhenOpened": "2024-08-29T19:45:04.124Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 0,
+              "Title": "Chord.cs",
+              "DocumentMoniker": "C:\\Users\\Dylan Nguyen\\Documents\\Visual Studio 2022\\Projects\\ChordApp\\ChordApp\\Components\\Objects\\Chord.cs",
+              "RelativeDocumentMoniker": "ChordApp\\Components\\Objects\\Chord.cs",
+              "ToolTip": "C:\\Users\\Dylan Nguyen\\Documents\\Visual Studio 2022\\Projects\\ChordApp\\ChordApp\\Components\\Objects\\Chord.cs",
+              "RelativeToolTip": "ChordApp\\Components\\Objects\\Chord.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABkAAAA1AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-29T19:27:16.78Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
               "Title": "Counter.razor",
               "DocumentMoniker": "C:\\Users\\Dylan Nguyen\\Documents\\Visual Studio 2022\\Projects\\ChordApp\\ChordApp\\Components\\Pages\\Counter.razor",
               "RelativeDocumentMoniker": "ChordApp\\Components\\Pages\\Counter.razor",
               "ToolTip": "C:\\Users\\Dylan Nguyen\\Documents\\Visual Studio 2022\\Projects\\ChordApp\\ChordApp\\Components\\Pages\\Counter.razor",
               "RelativeToolTip": "ChordApp\\Components\\Pages\\Counter.razor",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-08-29T02:58:51.232Z"
+              "WhenOpened": "2024-08-29T19:27:46.152Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "NavMenu.razor",
-              "DocumentMoniker": "C:\\Users\\Dylan Nguyen\\Documents\\Visual Studio 2022\\Projects\\ChordApp\\ChordApp\\Components\\Layout\\NavMenu.razor",
-              "RelativeDocumentMoniker": "ChordApp\\Components\\Layout\\NavMenu.razor",
-              "ToolTip": "C:\\Users\\Dylan Nguyen\\Documents\\Visual Studio 2022\\Projects\\ChordApp\\ChordApp\\Components\\Layout\\NavMenu.razor",
-              "RelativeToolTip": "ChordApp\\Components\\Layout\\NavMenu.razor",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAWAAAAAAAAAA==",
+              "DocumentIndex": 5,
+              "Title": "Home.razor",
+              "DocumentMoniker": "C:\\Users\\Dylan Nguyen\\Documents\\Visual Studio 2022\\Projects\\ChordApp\\ChordApp\\Components\\Pages\\Home.razor",
+              "RelativeDocumentMoniker": "ChordApp\\Components\\Pages\\Home.razor",
+              "ToolTip": "C:\\Users\\Dylan Nguyen\\Documents\\Visual Studio 2022\\Projects\\ChordApp\\ChordApp\\Components\\Pages\\Home.razor",
+              "RelativeToolTip": "ChordApp\\Components\\Pages\\Home.razor",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-08-29T02:57:30.639Z"
+              "WhenOpened": "2024-08-29T18:25:54.971Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "ChordConstructor.razor",
+              "DocumentMoniker": "C:\\Users\\Dylan Nguyen\\Documents\\Visual Studio 2022\\Projects\\ChordApp\\ChordApp\\Components\\Pages\\ChordConstructor.razor",
+              "RelativeDocumentMoniker": "ChordApp\\Components\\Pages\\ChordConstructor.razor",
+              "ToolTip": "C:\\Users\\Dylan Nguyen\\Documents\\Visual Studio 2022\\Projects\\ChordApp\\ChordApp\\Components\\Pages\\ChordConstructor.razor",
+              "RelativeToolTip": "ChordApp\\Components\\Pages\\ChordConstructor.razor",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAAgAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-08-29T18:24:19.633Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "Weather.razor",
+              "DocumentMoniker": "C:\\Users\\Dylan Nguyen\\Documents\\Visual Studio 2022\\Projects\\ChordApp\\ChordApp\\Components\\Pages\\Weather.razor",
+              "RelativeDocumentMoniker": "ChordApp\\Components\\Pages\\Weather.razor",
+              "ToolTip": "C:\\Users\\Dylan Nguyen\\Documents\\Visual Studio 2022\\Projects\\ChordApp\\ChordApp\\Components\\Pages\\Weather.razor",
+              "RelativeToolTip": "ChordApp\\Components\\Pages\\Weather.razor",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-08-29T18:23:52.671Z"
             }
           ]
         }

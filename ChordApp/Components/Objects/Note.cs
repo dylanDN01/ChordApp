@@ -41,7 +41,7 @@ namespace ChordApp.Components.Objects
 
             // search for within a list of possible notes
             for (int note = 0; note < scale.Length; note++) {
-                if (scale[note].Contains(rep))
+                if (scale[note].Split('/').ToList().Contains(rep))
                 {
                     alternate = scale[note].Split('/').ToList();
                 }
@@ -59,7 +59,7 @@ namespace ChordApp.Components.Objects
         public void Rescale(string rep)
         {
             Queue<string> rescale = new Queue<string>(scale); // initialize a queue
-            while (!rescale.Peek().Contains(rep))
+            while (!rescale.Peek().Equals(String.Join('/', GetAlt())))
             {
                 rescale.Enqueue(rescale.Dequeue());
             }
@@ -78,11 +78,11 @@ namespace ChordApp.Components.Objects
             int thisIndex = Array.IndexOf(scale, String.Join('/', GetAlt()));
             if (type == 2)
             {
-                return scale[thisIndex + 1].Split('/').ToList()[-1];
+                return scale[(thisIndex + 1) % scale.Length].Split('/').Last();
             }
             else if (type == 3)
             {
-                return scale[thisIndex + minor_3].Split("/").ToList()[-1];
+                return scale[(thisIndex + minor_3) % scale.Length].Split("/").Last();
             }
             return GetRep(); // self
         }
@@ -99,11 +99,11 @@ namespace ChordApp.Components.Objects
             int thisIndex = Array.IndexOf(scale, String.Join('/', GetAlt()));
             if (type == 2)
             {
-                return scale[thisIndex + 1].Split('/').ToList()[0];
+                return scale[(thisIndex + 2) % scale.Length].Split('/').First();
             }
             else if (type == 3)
             {
-                return scale[thisIndex + minor_3].Split("/").ToList()[0];
+                return scale[(thisIndex + major_3) % scale.Length].Split("/").First();
             }
             return GetRep(); // self
         }
@@ -119,6 +119,11 @@ namespace ChordApp.Components.Objects
             distance -= Array.IndexOf(scale, String.Join('/', other.GetAlt()));
 
             return distance; // can be positive or negative
+        }
+
+        public override string ToString()
+        {
+            return _rep;
         }
 
         // Returns the list of alternate representations of this note

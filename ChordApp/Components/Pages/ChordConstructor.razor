@@ -1,0 +1,21 @@
+﻿@page "/chord-constructor"
+@rendermode InteractiveServer
+
+<p role="status">Current count: @chord</p>
+<p role="status">Current Depth: @depth</p>
+
+<button class="btn btn-primary" @onclick="GenerateChord">Click me</button>
+
+@code {
+    private string chord = "A";
+    private Chord chordObj;
+    private int depth = 0;
+
+    private void GenerateChord()
+    {
+        chord = "B";
+        chordObj = new Chord("C");
+        chord = chordObj.ToString();
+        depth = chordObj.MaxDepth();
+    }
+}
