@@ -99,7 +99,7 @@ namespace ChordApp.Components.Objects
             int thisIndex = Array.IndexOf(scale, String.Join('/', GetAlt()));
             if (type == 2)
             {
-                return scale[(thisIndex + 2) % scale.Length].Split('/').First();
+                return scale[(thisIndex + 1) % scale.Length].Split('/').First();
             }
             else if (type == 3)
             {

@@ -1,5 +1,6 @@
-﻿using System.Linq;
-
+﻿using Microsoft.Extensions.ObjectPool;
+using Microsoft.Extensions.Primitives;
+using System;
 
 namespace ChordApp.Components.Objects
 {
@@ -7,16 +8,19 @@ namespace ChordApp.Components.Objects
     {
         private Note root; // root note
 
+        private string[] validNotes;
+
         private int SETDEPTH = 3; // up to a 7th if set to 4, triad if 3
 
-
+        private string[] ChordTypes = ["Diminished", "Minor", "Major", "Augmented"];
         /// <summary>
         /// Constructs a Chord
         /// </summary>
         /// <param name="_baseRep">Note the begin</param>
-        public Chord(string _baseRep) 
+        public Chord(string[] _baseRep) 
         {
-            root = ConstructChordTree(_baseRep, 0);
+            validNotes = _baseRep; // chords must have these
+            root = ConstructChordTree(_baseRep[0], 0);
         }
 
         /// <summary>
@@ -37,13 +41,17 @@ namespace ChordApp.Components.Objects
             return ChordNote;
         }
 
+
+
         /// <summary>
         /// Returns the list of all chords possible
         /// </summary>
         /// <returns>A List of strings, with each entry being a complete chord</returns>
-        public List<string> GetChordList()
+        public List<string> GetChordSet()
         {
-            return BuildTreeString(root, "", 0).Split(' ').Where(chord => !chord.Contains('-')).ToList<string>();
+            return BuildTreeString(root, "", 0).Split(' ').Where(chord => !chord.Contains('-'))
+            .Select(chord => validateChord(chord) ? chord : ".")
+            .ToList();
         }
 
         /// <summary>
@@ -52,7 +60,51 @@ namespace ChordApp.Components.Objects
         /// <returns>A string of each chord, seperated by a "space"</returns>
         public override string ToString()
         {
-            return String.Join(' ', GetChordList());
+
+
+            string result = "";
+            List<string> chords = GetChordSet();
+
+            for (int i = 0; i < ChordTypes.Length; i++)
+            { 
+                if (chords.ElementAt(i) != ".")
+                {
+                    
+                    result += ChordTypes[i] + ": " + chords.ElementAt(i) + ", \n";
+                }
+                
+            }
+            return result;
+        }
+
+        private bool validateChord(string inputChord)
+        {
+            if (validNotes == null || String.IsNullOrEmpty(inputChord))
+            {
+                return false; // or handle this case as appropriate
+            }
+            string[] chordNotes = inputChord.Split('/');
+
+            bool ContainsSoFar = false;
+            
+            for (int i = 0; i < validNotes.Length; i++)
+            {
+                ContainsSoFar = false;
+                for (int j = 0; j < chordNotes.Length; j++)
+                {
+                    if (chordNotes[j].Equals(validNotes[i]))
+                    {
+                        ContainsSoFar = true;
+                    }
+                }
+                if (ContainsSoFar == false) {
+                    return false; 
+                }
+
+            }
+
+            return true;
+
         }
 
         /// <summary>
@@ -67,11 +119,11 @@ namespace ChordApp.Components.Objects
             if (depth == MaxDepth())
             {
 
-                return " " + result + " ";
-                       
+                return result;
+                      
             }
             // seperator '-' only exists for incomplete (non max depth) branches
-            return result + "-" + BuildTreeString(node.previous, result + node.ToString(), depth + 1) + " " + BuildTreeString(node.next, result + node.ToString(), depth + 1);
+            return result + "-" + BuildTreeString(node.previous, result + node.ToString() + "/", depth + 1) + " " + BuildTreeString(node.next, result + node.ToString() + "/", depth + 1);
 
             
         }
