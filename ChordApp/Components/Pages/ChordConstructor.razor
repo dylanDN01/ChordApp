@@ -6,7 +6,8 @@
 
 <p>
     <input type="text" value ="C" @oninput="(EventArgs) => {OnChange(EventArgs.Value.ToString());}"/>
-    <button class="btn btn-primary" @onclick="GenerateChord">Click me</button>
+    <button class="btn btn-primary" @onclick="GenerateChord">Search Chords</button>
+    <button class="btn btn-primary" @onclick="LogExists">Does A E# C# exist?</button>
 </p>
 
 @code {
@@ -14,6 +15,11 @@
     private Chord chordObj;
     private int depth = 0;
     private string chords;
+
+    private void LogExists()
+    {
+        Console.WriteLine(chordObj.ChordExists("A/E#/C#", chordObj.GetRoot()));
+    }
 
     private void OnChange(string Value)
     {
@@ -26,6 +32,7 @@
         {
             chordObj = new Chord(root.Split(' '));
             chords = chordObj.ToString();
+            depth = chordObj.MaxDepth();
         }
         catch (ArgumentException ex)
         {

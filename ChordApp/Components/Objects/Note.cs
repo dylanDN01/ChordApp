@@ -104,7 +104,7 @@ namespace ChordApp.Components.Objects
             else if (type == 3)
             {
                 return scale[(thisIndex + major_3) % scale.Length].Split("/").First();
-            }
+            } 
             return GetRep(); // self
         }
 
