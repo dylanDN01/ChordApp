@@ -27,3 +27,4 @@ C:\Users\Dylan Nguyen\Documents\Visual Studio 2022\Projects\ChordApp\ChordApp\ob
 C:\Users\Dylan Nguyen\Documents\Visual Studio 2022\Projects\ChordApp\ChordApp\obj\Debug\net8.0\ChordApp.pdb
 C:\Users\Dylan Nguyen\Documents\Visual Studio 2022\Projects\ChordApp\ChordApp\obj\Debug\net8.0\ChordApp.genruntimeconfig.cache
 C:\Users\Dylan Nguyen\Documents\Visual Studio 2022\Projects\ChordApp\ChordApp\obj\Debug\net8.0\ref\ChordApp.dll
+C:\Users\Dylan Nguyen\Documents\Visual Studio 2022\Projects\ChordApp\ChordApp\obj\Debug\net8.0\scopedcss\Components\Pages\ChordConstructor.razor.rz.scp.css

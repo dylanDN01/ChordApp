@@ -22,10 +22,6 @@ build_property._RazorSourceGeneratorDebug =
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xBcHAucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Dylan Nguyen/Documents/Visual Studio 2022/Projects/ChordApp/ChordApp/Components/Pages/ChordConstructor.razor]
-build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xDaG9yZENvbnN0cnVjdG9yLnJhem9y
-build_metadata.AdditionalFiles.CssScope = 
-
 [C:/Users/Dylan Nguyen/Documents/Visual Studio 2022/Projects/ChordApp/ChordApp/Components/Pages/Counter.razor]
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xDb3VudGVyLnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
@@ -38,8 +34,8 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xIb21lLnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Dylan Nguyen/Documents/Visual Studio 2022/Projects/ChordApp/ChordApp/Components/Pages/Weather.razor]
-build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xXZWF0aGVyLnJhem9y
+[C:/Users/Dylan Nguyen/Documents/Visual Studio 2022/Projects/ChordApp/ChordApp/Components/Pages/Theory.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xUaGVvcnkucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/Dylan Nguyen/Documents/Visual Studio 2022/Projects/ChordApp/ChordApp/Components/Routes.razor]
@@ -57,3 +53,7 @@ build_metadata.AdditionalFiles.CssScope = b-lsvo1syv8c
 [C:/Users/Dylan Nguyen/Documents/Visual Studio 2022/Projects/ChordApp/ChordApp/Components/Layout/NavMenu.razor]
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xMYXlvdXRcTmF2TWVudS5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = b-tbjmihy6x9
+
+[C:/Users/Dylan Nguyen/Documents/Visual Studio 2022/Projects/ChordApp/ChordApp/Components/Pages/ChordConstructor.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xDaG9yZENvbnN0cnVjdG9yLnJhem9y
+build_metadata.AdditionalFiles.CssScope = b-0lfa8cpgvr

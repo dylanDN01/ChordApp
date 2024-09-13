@@ -5,6 +5,26 @@
       "PackagePath": "staticwebassets\\ChordApp.bundle.scp.css"
     },
     {
+      "Id": "C:\\Users\\Dylan Nguyen\\Documents\\Visual Studio 2022\\Projects\\ChordApp\\ChordApp\\wwwroot\\Assets\\PianoKeys\\piano_0.png",
+      "PackagePath": "staticwebassets\\Assets\\PianoKeys\\piano_0.png"
+    },
+    {
+      "Id": "C:\\Users\\Dylan Nguyen\\Documents\\Visual Studio 2022\\Projects\\ChordApp\\ChordApp\\wwwroot\\Assets\\PianoKeys\\piano_1.png",
+      "PackagePath": "staticwebassets\\Assets\\PianoKeys\\piano_1.png"
+    },
+    {
+      "Id": "C:\\Users\\Dylan Nguyen\\Documents\\Visual Studio 2022\\Projects\\ChordApp\\ChordApp\\wwwroot\\Assets\\PianoKeys\\piano_2.png",
+      "PackagePath": "staticwebassets\\Assets\\PianoKeys\\piano_2.png"
+    },
+    {
+      "Id": "C:\\Users\\Dylan Nguyen\\Documents\\Visual Studio 2022\\Projects\\ChordApp\\ChordApp\\wwwroot\\Assets\\PianoKeys\\piano_3.png",
+      "PackagePath": "staticwebassets\\Assets\\PianoKeys\\piano_3.png"
+    },
+    {
+      "Id": "C:\\Users\\Dylan Nguyen\\Documents\\Visual Studio 2022\\Projects\\ChordApp\\ChordApp\\wwwroot\\Assets\\pianosprite.jpg",
+      "PackagePath": "staticwebassets\\Assets\\pianosprite.jpg"
+    },
+    {
       "Id": "C:\\Users\\Dylan Nguyen\\Documents\\Visual Studio 2022\\Projects\\ChordApp\\ChordApp\\wwwroot\\app.css",
       "PackagePath": "staticwebassets\\app.css"
     },

@@ -12,16 +12,40 @@ namespace ChordApp.Components.Objects
 
         private int SETDEPTH = 3; // up to a 7th if set to 4, triad if 3
 
-        private string[] ChordTypes = ["Diminished", "Minor", "Major", "Augmented"]; // valid Chord Labels
+        private string[] ChordTypes;
 
         /// <summary>
         /// Constructs a Chord
         /// </summary>
         /// <param name="_baseRep">Note the begin</param>
-        public Chord(string[] _baseRep) 
+        public Chord(string[] _baseRep, int depth) 
         {
-            validNotes = _baseRep; // chords must have these
-            root = ConstructChordTree(_baseRep[0], 0);
+            this.ChordTypes = CreateChordLabels(depth);
+            this.SETDEPTH = depth;
+            this.validNotes = _baseRep; // chords must have these
+            this.root = ConstructChordTree(_baseRep[0], 0);
+        }
+
+        /// <summary>
+        /// Generates all the chord labels for the string representation
+        /// </summary>
+        /// <param name="depth">The integer value representing the depth</param>
+        /// <returns>The string array containing all the valid labels for the given depth</returns>
+        private string[] CreateChordLabels(int depth)
+        {
+            switch (depth)
+            {
+                case 1:
+                    return ["Note"];
+                case 2:
+                    return ["Minor 3rd", "Major 3rd"];
+                case 3:
+                    return ["Diminished", "Minor", "Major", "Augmented"];
+                case 4:
+                    return ["Diminished 7th", "Diminished Minor 7th", "Minor 7th", "Minor Major 7th", "Dominant 7th", "Major 7th", "Augmented Major 7th", "Augmented 7th"];
+                default:
+                    return [];
+            }   
         }
 
         /// <summary>

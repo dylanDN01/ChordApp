@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("ChordApp")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+9a4eebd5ce9b044c7286e12e345553f7b683aa82")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+7900ab8c59638641dd1e361566e1f92fd5fc6cb4")]
 [assembly: System.Reflection.AssemblyProductAttribute("ChordApp")]
 [assembly: System.Reflection.AssemblyTitleAttribute("ChordApp")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

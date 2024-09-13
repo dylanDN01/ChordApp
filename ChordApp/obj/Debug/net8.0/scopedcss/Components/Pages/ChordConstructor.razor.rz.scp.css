@@ -1,0 +1,48 @@
+p[b-0lfa8cpgvr] {
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.chord-list[b-0lfa8cpgvr] {
+    display: grid;
+    grid-template-rows: auto auto;
+    grid-auto-flow: column;
+
+    border: 1px solid;
+    margin: 5px;
+
+    justify-content: space-between;
+}
+
+.chord-row[b-0lfa8cpgvr] {
+    justify-content: space-between;
+    padding: 3px;
+    
+}
+.chord-row th[b-0lfa8cpgvr] {
+    border-width: 2px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.piano-image[b-0lfa8cpgvr] {
+    position: absolute;
+    left: 20%;
+    object-fit: cover;
+    width: 60%;
+    height: 35%;
+}
+
+.key-dots[b-0lfa8cpgvr] {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: flex-end; /* Adjust to center dots vertically if needed */
+}
+
+.key-dots[b-0lfa8cpgvr]::before {
+    content: "";
+    display:block;
+    width: 10px;
+    height: 10px;
+    background-color: red;
+    border-radius: 50%;
+}

@@ -108,6 +108,74 @@ namespace ChordApp.Components.Objects
             return GetRep(); // self
         }
 
+        /// <summary>
+        /// Given an integer input "Distance", Find the next Notes string representation at the next Distance
+        /// </summary>
+        /// <param name="Distance"></param>
+        /// <returns>The string representation of the next note within a Distance (default first entry found after split)</returns>
+        public string GetNextNote(int Distance = 1)
+        {
+            // Distance mod Scale Length gets the next note within any distance (handles wraparound)
+            string NoteRep = scale[Distance % scale.Length].Split('/').First();
+            return NoteRep;
+        }
+
+        /// <summary>
+        /// Given a string representation of a Note, And the scale type string (default Major)
+        /// Return the amount of Sharps in that Notes scale
+        /// </summary>
+        /// <param name="Note">The Note to search</param>
+        /// <param name="AccidentalType">Either "Sharp" or "Flat"</param>
+        /// <param name="Type">Either "Major" or "Minor"</param>
+        /// <returns></returns>
+        public int GetNumAccidentals(string Note, string AccidentalType, string Type = "Major")
+        {
+            int currIndex = Array.IndexOf(scale, "B#/C");
+
+            // chord types
+            switch (Type)
+            {
+                case "Major":
+                    currIndex = Array.IndexOf(scale, "B#/C");
+                    break;
+                case "Minor":
+                    currIndex = Array.IndexOf(scale, "A");
+                    break;
+            }
+            
+            int NumAccidentals = 0;
+            while (!scale[currIndex % scale.Length].Split('/').Contains(Note))
+            {
+                if (AccidentalType.Equals("Flat"))
+                {
+                    if (Type.Equals("Major"))
+                    {
+                        currIndex = currIndex + 5;
+                    }
+                    else if (Type.Equals("Minor"))
+                    {
+                        currIndex = currIndex + 7;
+                    }
+                   
+                }
+                else if (AccidentalType.Equals("Sharp"))
+                {
+                    if (Type.Equals("Major"))
+                    {
+                        currIndex = currIndex + 7;
+                    }
+                    else if (Type.Equals("Minor"))
+                    {
+                        currIndex = currIndex + 5;
+                    }
+                    
+                }
+                NumAccidentals++;
+            }
+            return NumAccidentals;
+        }
+
+
 
         // Given an input other object of type "Note",
         // Return the distance to the other note on the scale.
