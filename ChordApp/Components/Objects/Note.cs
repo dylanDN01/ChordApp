@@ -121,58 +121,96 @@ namespace ChordApp.Components.Objects
         }
 
         /// <summary>
-        /// Given a string representation of a Note, And the scale type string (default Major)
-        /// Return the amount of Sharps in that Notes scale
+        /// Given a string representation of a Note, And the scale type string
+        /// Return the amount of Sharps in that Notes scale. Handles Sharp and Flats automatically
         /// </summary>
         /// <param name="Note">The Note to search</param>
-        /// <param name="AccidentalType">Either "Sharp" or "Flat"</param>
         /// <param name="Type">Either "Major" or "Minor"</param>
-        /// <returns></returns>
-        public int GetNumAccidentals(string Note, string AccidentalType, string Type = "Major")
+        /// <returns>int number of Accidentals, string type of Accidental (Sharp/Flat)</returns>
+        public (int, string) GetNumAccidentals(string Note, string Type)
         {
+            // automatic detection for sharps and flats
+            string AccidentalType = "Sharp";
+            if (Type.Equals("Major"))
+            {
+                string[] MajorSharps = { "C", "G", "D", "A", "E", "B", "F#", "C#" };
+                AccidentalType = MajorSharps.Contains(Note) ? "Sharp" : "Flat";
+            }
+            else if (Type.Equals("Minor"))
+            {
+                string[] MinorSharps = { "A", "E", "B", "F#", "C#", "G#, D#" };
+                AccidentalType = MinorSharps.Contains(Note) ? "Sharp" : "Flat";
+            }
+
+
             int currIndex = Array.IndexOf(scale, "B#/C");
 
             // chord types
-            switch (Type)
+            if (Type.Equals("Major"))
             {
-                case "Major":
-                    currIndex = Array.IndexOf(scale, "B#/C");
-                    break;
-                case "Minor":
-                    currIndex = Array.IndexOf(scale, "A");
-                    break;
+                currIndex = Array.IndexOf(scale, "B#/C");
             }
-            
+            else if (Type.Equals("Minor"))
+            {
+                currIndex = Array.IndexOf(scale, "A");
+            }
+
+            // count accidentals
             int NumAccidentals = 0;
             while (!scale[currIndex % scale.Length].Split('/').Contains(Note))
             {
-                if (AccidentalType.Equals("Flat"))
+                int adjustment = 0;
+                if (AccidentalType == "Sharp")
                 {
-                    if (Type.Equals("Major"))
-                    {
-                        currIndex = currIndex + 5;
-                    }
-                    else if (Type.Equals("Minor"))
-                    {
-                        currIndex = currIndex + 7;
-                    }
-                   
+                    adjustment += 7;
                 }
-                else if (AccidentalType.Equals("Sharp"))
+                else if (AccidentalType == "Flat")
                 {
-                    if (Type.Equals("Major"))
-                    {
-                        currIndex = currIndex + 7;
-                    }
-                    else if (Type.Equals("Minor"))
-                    {
-                        currIndex = currIndex + 5;
-                    }
-                    
+                    adjustment += 5;
                 }
+
+                currIndex += adjustment;
                 NumAccidentals++;
             }
-            return NumAccidentals;
+            return (NumAccidentals, AccidentalType);
+        }
+
+
+
+        /// <summary>
+        /// Given a string input Note representing the root, and the Type of Accidental (Sharp/Flat),
+        /// Return an array of strings, representing each Accidental on the Scale. Dependent on NumAccidentals
+        /// </summary>
+        /// <param name="Note">Root note</param>
+        /// <param name="Type">Accidental (Sharp or Flat)</param>
+        /// <returns>String array of length equal to the length from GetNumAccidentals, contains all the sharps or flats</returns>
+        public string[] GetAccidentals(string Note, string Type)
+        {
+            int NumAccidental = GetNumAccidentals(Note, Type).Item1;
+            string AccidentalType = GetNumAccidentals(Note, Type).Item2;
+
+            string[] AccidentalList = new string[NumAccidental];
+
+            int currIndex = Array.IndexOf(scale, "F#/Gb"); // sharps by default
+            if (AccidentalType.Equals("Sharp"))
+            {
+                currIndex = Array.IndexOf(scale, "F#/Gb");
+                for (int i = 0; i < NumAccidental; i++)
+                {
+                    AccidentalList[i] = scale[currIndex % scale.Length].Split('/').First();
+                    currIndex = currIndex + 7;
+                }
+            }
+            else if (AccidentalType.Equals("Flat"))
+            {
+                currIndex = Array.IndexOf(scale, "A#/Bb");
+                for (int i = 0; i < NumAccidental; i++)
+                {
+                    AccidentalList[i] = scale[currIndex % scale.Length].Split('/').Last();
+                    currIndex = currIndex + 5;
+                }
+            }
+            return AccidentalList;
         }
 
 
@@ -183,10 +221,10 @@ namespace ChordApp.Components.Objects
         // A negative distance means that This Note is below on the scale,
         public int CompareTo(Note other)
         {
-            int distance = Array.IndexOf(scale, String.Join('/', GetAlt()));
+            int? distance = Array.IndexOf(scale, String.Join('/', GetAlt()));
             distance -= Array.IndexOf(scale, String.Join('/', other.GetAlt()));
 
-            return distance; // can be positive or negative
+            return distance ?? 0; // can be positive or negative, 0 if null
         }
 
         public override string ToString()
