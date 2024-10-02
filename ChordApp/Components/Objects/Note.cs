@@ -109,18 +109,6 @@ namespace ChordApp.Components.Objects
         }
 
         /// <summary>
-        /// Given an integer input "Distance", Find the next Notes string representation at the next Distance
-        /// </summary>
-        /// <param name="Distance"></param>
-        /// <returns>The string representation of the next note within a Distance (default first entry found after split)</returns>
-        public string GetNextNote(int Distance = 1)
-        {
-            // Distance mod Scale Length gets the next note within any distance (handles wraparound)
-            string NoteRep = scale[Distance % scale.Length].Split('/').First();
-            return NoteRep;
-        }
-
-        /// <summary>
         /// Given a string representation of a Note, And the scale type string
         /// Return the amount of Sharps in that Notes scale. Handles Sharp and Flats automatically
         /// </summary>
@@ -129,17 +117,18 @@ namespace ChordApp.Components.Objects
         /// <returns>int number of Accidentals, string type of Accidental (Sharp/Flat)</returns>
         public (int, string) GetNumAccidentals(string Note, string Type)
         {
+            Note tempNote = new Note(Note); // create a temporary note for easier comparison
             // automatic detection for sharps and flats
             string AccidentalType = "Sharp";
             if (Type.Equals("Major"))
             {
                 string[] MajorSharps = { "C", "G", "D", "A", "E", "B", "F#", "C#" };
-                AccidentalType = MajorSharps.Contains(Note) ? "Sharp" : "Flat";
+                AccidentalType = MajorSharps.Any(n => tempNote.GetAlt().Contains(n)) ? "Sharp" : "Flat";
             }
             else if (Type.Equals("Minor"))
             {
                 string[] MinorSharps = { "A", "E", "B", "F#", "C#", "G#, D#" };
-                AccidentalType = MinorSharps.Contains(Note) ? "Sharp" : "Flat";
+                AccidentalType = MinorSharps.Any(n => tempNote.GetAlt().Contains(n)) ? "Sharp" : "Flat";
             }
 
 
@@ -215,6 +204,65 @@ namespace ChordApp.Components.Objects
 
 
 
+        /// <summary>
+        /// Given an input string Note and a string Type, return the List of strings
+        /// representing the Full Scale of the Note provided.
+        /// </summary>
+        /// <param name="Note">A singular Note, in format C, C#, or Cb</param>
+        /// <param name="Type">Either Major or Minor, usually dependent on the "Mode"</param>
+        /// <returns>A List<string> of all the notes in the scale starting from the root</string></returns>
+        public List<String> FullScale(string Note, string Type)
+        {
+            List<String> Scale  = WhiteKeyScale(Note, Type); // step 1 get white keys (7 total)
+
+            string[] AccListNormalized = GetAccidentals(Note, Type).Select(x => x.Substring(0, 1)).ToArray(); // Unsharp the Accidentals for comparison
+
+            // LINQ query to get the indices within the  Scale list created above which have a key that matches an accidental
+            var IndicesInAccList = Scale.AsEnumerable().Select((item, index) => new { Item = item, Index = index })
+                .Where(item => AccListNormalized.Contains(item.Item.Substring(0, 1)))
+                .Select(item => item.Index)
+                .ToList();
+
+            // Add accidental to white keys
+            for (int i = 0; i < IndicesInAccList.Count; i++)
+            {
+                Scale[IndicesInAccList[i]] = GetAccidentals(Note, Type)[Array.IndexOf(AccListNormalized, Scale[IndicesInAccList[i]])];
+            }
+
+            return Scale;
+        }
+
+
+        /// <summary>
+        /// Intended for use with FullScale() Method only.
+        /// Returns a list of strings representing the white keys to be modified,
+        /// Automatically handles sharps vs flat scales
+        /// </summary>
+        /// <param name="note">The Unmodified Note string</param>
+        /// <param name="Type">The Mode of the desired scale; Either Major or Minor</param>
+        /// <returns>A List of Strings containing each of the 7 White Keys in order of note</returns>
+        private List<String> WhiteKeyScale(string note, string Type)
+        {
+            string[] TempArray = ["C", "D", "E", "F", "G", "A", "B"];
+
+            int index = Array.IndexOf(TempArray, note.Substring(0, 1));
+            if (GetNumAccidentals(note, Type).Item2.Equals("Flat"))
+            {
+                index++;
+            }
+
+            Queue<string> rescale = new Queue<string>(TempArray); // initialize a queue
+
+            note = TempArray[index]; // normalize
+            while (!rescale.Peek().Equals(note))
+            {
+                rescale.Enqueue(rescale.Dequeue());
+            }
+            return rescale.ToList();
+        }
+
+
+
         // Given an input other object of type "Note",
         // Return the distance to the other note on the scale.
         // A positive distance means that This Note is above on the scale,
@@ -227,15 +275,33 @@ namespace ChordApp.Components.Objects
             return distance ?? 0; // can be positive or negative, 0 if null
         }
 
+
+        /// <summary>
+        /// Returns the string representation of this Note. Same function as GetRep()
+        /// </summary>
+        /// <returns>A string of character(s)</returns>
         public override string ToString()
         {
             return _rep;
         }
 
-        // Returns the list of alternate representations of this note
+        
+        /// <summary>
+        /// Finds a list of strings that have the same pitch on the scale
+        /// </summary>
+        /// <returns>A list of Strings</returns>
         public List<string> GetAlt() { return _alt; }
 
-        // Returns the string representation of this note
+        /// <summary>
+        /// Returns the string representation of this Note. Same function as ToString()
+        /// </summary>
+        /// <returns>A string of character(s)</returns>
         public string GetRep() { return _rep; }
+
+        /// <summary>
+        /// Returns the string array representing the scale from this note
+        /// </summary>
+        /// <returns>string array of length 12</returns>
+        public string[] GetScale() { return scale; }
     }
 }

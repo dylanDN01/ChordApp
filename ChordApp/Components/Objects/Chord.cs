@@ -1,6 +1,7 @@
 ﻿using Microsoft.Extensions.ObjectPool;
 using Microsoft.Extensions.Primitives;
 using System;
+using static System.Formats.Asn1.AsnWriter;
 
 namespace ChordApp.Components.Objects
 {
@@ -199,7 +200,11 @@ namespace ChordApp.Components.Objects
             return false;
 
         }
-        
+
+
+
+
+
 
         /// <summary>
         /// Returns the tallest branch of the tree (usually set at 3 for triad)

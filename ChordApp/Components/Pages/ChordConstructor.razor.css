@@ -23,26 +23,44 @@
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 
-.piano-image {
+.piano-keys {
+    display: grid;
+    place-items: center;
+    grid-auto-flow: column;
+    grid-gap: 10px;
+}
+
+
+#AllKeys {
+    border-width: 2px;
+    border-color: black;
+    border-radius: 10px;
+}
+
+.RightFacingKey {
+    height: 350px;
+    width: 60px;
+    padding: 20px;
+}
+
+.LeftFacingKey {
+    height: 350px;
+    width: 60px;
+    padding: 20px;
+}
+
+.MiddleKey {
+    height: 350px;
+    width: 60px;
+    padding: 20px;
+}
+
+.BlackKey {
+    height: 250px;
+    width: 30px;
+    background-color: black;
+    z-index: 999;
     position: absolute;
-    left: 20%;
-    object-fit: cover;
-    width: 60%;
-    height: 35%;
+    border-color: black;
 }
 
-.key-dots {
-    width: 100%;
-    height: 100%;
-    display: flex;
-    align-items: flex-end; /* Adjust to center dots vertically if needed */
-}
-
-.key-dots::before {
-    content: "";
-    display:block;
-    width: 10px;
-    height: 10px;
-    background-color: red;
-    border-radius: 50%;
-}
